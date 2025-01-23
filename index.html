@@ -108,7 +108,7 @@
             <span class="carousel-control-next-icon"></span>
           </button>
 
-          <span>일본 한달 연수</span>
+          <span>일본 한 달 어학연수</span>
         </div>
         <!-- </div> -->
       </div>
@@ -253,8 +253,9 @@
         }
         sections[currentSection].scrollIntoView({ behavior: "smooth" });
         updateNavbar(currentSection);
-        // handleScroll(event.deltaY);
+        handleScroll(event.deltaY);
       });
+
       let startY = 0;
       window.addEventListener("touchstart", (event) => {
         startY = event.touches[0].clientY;
@@ -262,7 +263,7 @@
 
       window.addEventListener("touchmove", (event) => {
         const deltaY = startY - event.touches[0].clientY;
-        handleScroll(deltaY);
+        // handleScroll(deltaY);
       });
       // Initialize navbar
       updateNavbar(currentSection);
