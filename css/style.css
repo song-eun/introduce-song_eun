@@ -13,6 +13,13 @@ body {
   font-family: "Noto Sans KR", serif;
   overflow-y: auto; /* 세로 스크롤 가능 */
   scroll-behavior: smooth; /* 부드러운 스크롤 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 section {
@@ -182,6 +189,7 @@ li {
   section {
     font-size: 1.5rem;
     padding: 20px;
+    padding-top: 70px;
   }
 
   h1 {
