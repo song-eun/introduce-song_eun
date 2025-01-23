@@ -152,6 +152,11 @@ li {
   margin: 15px;
 }
 
+.experience .content {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
   body {
     overflow: auto; /* 모바일에서 스크롤 가능하게 수정 */
