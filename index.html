@@ -209,6 +209,25 @@
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll(".navbar a");
       let currentSection = 0;
+      let isScrolling = false;
+
+      const handleScroll = (deltaY) => {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        if (deltaY > 0 && currentSection < sections.length - 1) {
+          currentSection++;
+        } else if (deltaY < 0 && currentSection > 0) {
+          currentSection--;
+        }
+
+        sections[currentSection].scrollIntoView({ behavior: "smooth" });
+        updateNavbar(currentSection);
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 500); // 스크롤 중복 방지
+      };
 
       const updateNavbar = (index) => {
         navLinks.forEach((link, i) => {
@@ -234,8 +253,17 @@
         }
         sections[currentSection].scrollIntoView({ behavior: "smooth" });
         updateNavbar(currentSection);
+        // handleScroll(event.deltaY);
+      });
+      let startY = 0;
+      window.addEventListener("touchstart", (event) => {
+        startY = event.touches[0].clientY;
       });
 
+      window.addEventListener("touchmove", (event) => {
+        const deltaY = startY - event.touches[0].clientY;
+        handleScroll(deltaY);
+      });
       // Initialize navbar
       updateNavbar(currentSection);
     </script>
