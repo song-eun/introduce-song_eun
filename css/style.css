@@ -136,6 +136,11 @@ span {
   height: 10px;
 } */
 
+.slide {
+  width: 50%;
+  max-width: 400px;
+}
+
 ul {
   margin-left: 50px;
   list-style-type: none;
@@ -155,6 +160,11 @@ li {
 .experience .content {
   display: flex;
   flex-direction: column;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
 }
 
 @media (max-width: 768px) {
