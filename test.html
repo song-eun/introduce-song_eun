@@ -16,7 +16,188 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@500&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        /* font-family: Arial, sans-serif; */
+        overflow: hidden;
+        font-family: "Noto Sans KR", serif;
+        overflow-y: auto; /* 세로 스크롤 가능 */
+        scroll-behavior: smooth; /* 부드러운 스크롤 */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE, Edge */
+      }
+
+      pre {
+        font-family: "Noto Sans KR", serif;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      .logo {
+        width: 25px;
+        height: 25px;
+      }
+
+      .about {
+        background-color: #6d9773;
+      }
+
+      .experience {
+        background-color: #0c3a2d;
+      }
+
+      .hobby {
+        background-color: #bb8954;
+      }
+
+      .plan {
+        background-color: #ffb902;
+      }
+
+      section {
+        height: 100vh;
+        padding-top: 90px; /* navbar 높이만큼 패딩 추가 */
+      }
+
+      h1 {
+        margin-left: 10%;
+        margin-bottom: 20px;
+        color: #ffff;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* margin-top: 20px; 필요에 따라 조정 */
+      }
+
+      .content {
+        border-radius: 30px;
+        background-color: #ffff;
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .experience .container .hobby {
+        flex-wrap: wrap;
+      }
+
+      .experience .container .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .my-pic {
+        width: 45%;
+        height: auto;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      li {
+        margin: 10px;
+        font-size: 25px;
+      }
+
+      .navbar a.active {
+        color: #ffd700;
+      }
+
+      .navbar a:hover {
+        color: #ffd700;
+      }
+
+      span {
+        margin-top: 20px;
+        font-size: 25px;
+      }
+
+      .experience .carousel {
+        width: 60%;
+        height: auto;
+      }
+
+      .hobby .carousel {
+        width: 45%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 14px; /* 모바일에서 기본 글씨 크기 줄이기 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 큰 제목의 크기를 축소 */
+        }
+
+        li {
+          font-size: 1.5rem; /* 큰 제목의 크기를 축소 */
+        }
+
+        .navbar a {
+          font-size: 1rem; /* 네비게이션 링크 크기 줄이기 */
+        }
+      }
+
+      @media (max-width: 480px) {
+        html {
+          font-size: 12px; /* 더 작은 화면에서는 글씨를 더 줄이기 */
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        li {
+          font-size: 1.2rem;
+        }
+
+        .navbar a {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="navbar">
@@ -34,7 +215,7 @@
           <ul>
             <li>이름: 송은재</li>
             <li>학과: 컴퓨터정보공학과</li>
-            <li>MBTI: ISTP <span class="description">(I : 95%..)</span></li>
+            <li>MBTI: ISTP (I : 95%..)</li>
             <li>
               <a href="https://github.com/song-eun"
                 ><img src="./img/github-logo.png" class="logo"
@@ -225,10 +406,10 @@
             <li>📷 사진</li>
             <li>✈️ 여행</li>
             <li>🍞 홈베이킹</li>
-            <li>🎮 닌텐도 게임 <span class="description">(특히 젤다)</span></li>
+            <li>🎮 닌텐도 게임 (특히 젤다)</li>
             <li>
-              🎧 음악 듣기 <br />
-              <span class="description">(Jazz, R&B, J-POP 다 좋아합니다)</span>
+              🎧 음악 듣기
+              <pre>(Jazz, R&B, J-POP 다 좋아합니다)</pre>
             </li>
           </ul>
         </div>
