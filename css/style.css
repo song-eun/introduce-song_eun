@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@500&display=swap");
 
+/* 기본 스타일 초기화 */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +10,15 @@
 html,
 body {
   height: 100%;
-  /* font-family: Arial, sans-serif; */
   overflow: hidden;
-  font-family: "Noto Sans KR", serif;
+  font-family: "Noto Sans KR", sans-serif;
   overflow-y: auto; /* 세로 스크롤 가능 */
   scroll-behavior: smooth; /* 부드러운 스크롤 */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE, Edge */
 }
 
-pre {
-  font-family: "Noto Sans KR", serif;
-}
-
+/* 네비게이션 바 */
 .navbar {
   position: fixed;
   top: 0;
@@ -29,8 +26,8 @@ pre {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 10px 20px;
-  text-align: center;
+  padding: 10px 200px;
+  /* text-align: center; */
   z-index: 1000;
 }
 
@@ -42,9 +39,18 @@ pre {
   transition: color 0.3s;
 }
 
-.logo {
-  width: 25px;
-  height: 25px;
+.navbar a.active {
+  color: #ffd700;
+}
+
+.navbar a:hover {
+  color: #ffd700;
+}
+
+/* 섹션별 스타일 */
+section {
+  height: 100vh;
+  padding-top: 90px; /* navbar 높이만큼 패딩 추가 */
 }
 
 .about {
@@ -63,9 +69,31 @@ pre {
   background-color: #ffb902;
 }
 
-section {
-  height: 100vh;
-  padding-top: 90px; /* navbar 높이만큼 패딩 추가 */
+/* 컨테이너 스타일 */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  border-radius: 30px;
+  background-color: #ffff;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.experience .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -75,44 +103,11 @@ h1 {
   font-size: 2.4rem;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  /* margin-top: 20px; 필요에 따라 조정 */
-}
-
-.content {
-  border-radius: 30px;
-  background-color: #ffff;
-  width: 90%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* .experience .container .hobby {
-  flex-wrap: wrap;
-} */
-
-.experience .container .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.my-pic {
-  width: 45%;
-  height: auto;
-}
-
+/* 리스트 스타일 */
 ul {
   list-style-type: none;
+  width: 35%;
+  margin-left: 50px;
 }
 
 li {
@@ -120,70 +115,64 @@ li {
   font-size: 1.5rem;
 }
 
-.navbar a.active {
-  color: #ffd700;
-}
-
-.navbar a:hover {
-  color: #ffd700;
-}
-
 span {
   margin-top: 20px;
   font-size: 1.4rem;
 }
 
+/* 이미지 크기 반응형 조정 */
+.my-pic {
+  width: 45vw; /* 화면 너비의 45%로 설정 */
+  max-width: 450px; /* 최대 크기 제한 */
+  height: auto;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* 캐러셀 크기 조정 */
+
 .experience .carousel {
-  width: 55%;
+  width: 60vw; /* 화면 너비의 50% */
+  max-width: 600px; /* 최대 크기 제한 */
   height: auto;
 }
 
 .hobby .carousel {
-  width: 40%;
-  /* height: auto; */
-  /* max-height: 50%; */
-}
-
-.hobby ul {
-  width: 50%;
+  width: 50vw; /* 화면 너비의 50% */
+  max-width: 500px; /* 최대 크기 제한 */
   height: auto;
 }
 
 .description {
   font-size: 1rem;
 }
-/* 
-@media (max-width: 768px) {
-  html {
-    font-size: 14px; 
+
+@media (max-width: 1280px) {
+  /* 12인치 13인치 */
+  .experience .carousel {
+    width: 45vw;
+    max-width: 550px;
   }
 
-  h1 {
-    font-size: 2rem; 
-  }
-
-  li {
-    font-size: 1.5rem;
-  }
-
-  .navbar a {
-    font-size: 1rem; 
+  .hobby .carousel {
+    width: 45vw;
+    max-width: 450px;
   }
 }
 
-@media (max-width: 480px) {
-  html {
-    font-size: 12px;   }
-
-  h1 {
-    font-size: 2rem;
+@media (max-width: 1024px) {
+  /* 태블릿 이하 11인치*/
+  .my-pic {
+    width: 45vw;
+    max-width: 400px;
   }
 
-  li {
-    font-size: 1.2rem;
+  .experience .carousel,
+  .hobby .carousel {
+    width: 45vw;
+    max-width: 400px;
   }
-
-  .navbar a {
-    font-size: 0.9rem;
-  }
-} */
+}
